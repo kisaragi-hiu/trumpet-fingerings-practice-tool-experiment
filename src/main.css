@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Jost*", sans-serif;
+    background: #fff;
+  }
+  body {
+    margin: 8rem auto;
+    width: min(95vw, 1000px);
+    @apply text-xl;
+  }
+  h1 {
+    @apply font-bold text-4xl;
+    @apply mb-4;
+  }
+  h2 {
+    @apply text-2xl;
+    font-weight: 600;
+    align-self: end;
+  }
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+#main {
+  display: grid;
+  grid-template: repeat(3, 1fr) 0.1fr repeat(3, 1fr) / repeat(19, 1fr);
+  margin-bottom: 5rem;
+}

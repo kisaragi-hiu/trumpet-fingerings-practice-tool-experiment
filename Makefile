@@ -1,7 +1,7 @@
 src_js := $(wildcard src/*.js)
 src_css := $(wildcard src/*.css)
 
-.PHONY: dev clean clean-all build watch-js watch-css
+.PHONY: dev clean clean-all watch-js watch-css serve dev build
 
 clean:
 	git clean -Xf
@@ -31,16 +31,3 @@ dist/built.js: $(src_js) package.json Makefile
 
 dist/built.css: $(src_css) package.json Makefile
 	npx tailwindcss --minify --postcss -i src/main.css -o dist/built.css
-
-# External resource demo
-# Yes, this is what you do if you don't want to do it in Webpack.
-#
-# "Prior to webpack, front-end developers would use tools like grunt
-# and gulp to process these assets and move them from their /src
-# folder into their /dist or /build directory."
-#
-# --- https://webpack.js.org/guides/asset-management/
-#
-# dist/feather-icons: package.json
-# 	-rm dist/feather-icons -r
-# 	cp -r node_modules/feather-icons/dist dist/feather-icons

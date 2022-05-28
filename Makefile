@@ -24,9 +24,9 @@ dev: dist/index.html
 	npx concurrently "make watch-js" "make watch-css" "make serve"
 
 # * build
-build: dist/built.js dist/built.css dist/index.html
+build: dist/index.js dist/built.css dist/index.html
 
-dist/built.js: $(src_js) package.json Makefile
+dist/index.js: $(src_js) package.json Makefile
 	npx rollup --config
 
 dist/built.css: $(src_css) package.json Makefile

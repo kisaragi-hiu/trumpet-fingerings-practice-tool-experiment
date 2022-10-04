@@ -30,7 +30,7 @@ function playTransposed(note) {
     playing_now = [];
   }
   playing_now.push(osc);
-  gain.gain.value = 1;
+  gain.gain.value = 0.2;
   osc.start(0);
   osc.stop(1);
 }
